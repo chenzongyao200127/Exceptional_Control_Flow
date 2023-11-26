@@ -49,3 +49,42 @@
   从异常开始，异常位于硬件和操作系统交界的部分。我们还会讨论系统调用，它们是为应用程序提供到操作系统的入口点的异常。
   然后，我们会提升抽象的层次，描述进程和信号，它们位于应用和操作系统的交界之处。最后讨论非本地跳转，这是 ECF 的一种应用层形式。
 
+====================================================================================================
+Exceptional Control Flow (ECF) refers to the mechanisms in computer systems that alter the normal sequential execution of instructions. These mechanisms enable a computer to respond to events that can occur asynchronously (independent of the main program flow) or as a result of executing certain instructions. ECF is crucial for handling unexpected situations, errors, and for providing more flexible control over program execution.
+
+Here are some common forms of Exceptional Control Flow:
+
+1. **Interrupts:** Hardware interrupts are signals sent to the processor from external devices, like a mouse or keyboard, to indicate that an event has occurred which requires immediate attention. Software interrupts are similar but are triggered by software events.
+
+2. **Exceptions:** These are unusual conditions that occur while a program is running, such as divide-by-zero errors, invalid memory accesses, or other illegal instruction usages. When an exception occurs, the normal control flow is interrupted, and control is transferred to a special exception handler.
+
+3. **Signals:** In operating systems like UNIX, signals are used to notify processes that a specific event has occurred. For example, a `SIGKILL` signal instructs a process to terminate, and a `SIGALRM` signal indicates that a timer has expired.
+
+4. **Context Switching:** In multi-tasking operating systems, the scheduler may interrupt the execution of a running process to switch the CPU to another process. This context switch is a type of ECF, as it alters the normal flow of execution.
+
+5. **System Calls:** These are requests in a user program to perform I/O operations, create or terminate processes, or communicate with other processes, which are handled by the operating system. A system call interrupts the current process, transfers control to the OS, and then returns control back to the process.
+
+6. **Non-Local Jumps:** In programming, constructs like `setjmp` and `longjmp` in C provide a way to jump from one point in a program to another, bypassing the normal call and return rules. 
+
+ECF is essential for the efficient and robust operation of computer systems, allowing them to handle asynchronous events, share resources among multiple processes, and recover from errors.
+
+异常控制流（ECF）指的是计算机系统中改变正常指令顺序执行的机制。
+这些机制使计算机能够响应可能异步发生的事件（独立于主程序流程）或由于执行某些指令而产生的事件。
+异常控制流对于处理意外情况、错误以及提供更灵活的程序执行控制至关重要。
+
+以下是一些常见的异常控制流形式：
+
+1. **中断（Interrupts）：** 硬件中断是外部设备（如鼠标或键盘）向处理器发送的信号，表示发生了需要立即注意的事件。软件中断类似，但由软件事件触发。
+
+2. **异常（Exceptions）：** 这是程序运行时发生的不寻常情况，如除零错误、无效内存访问或其他非法指令使用。发生异常时，正常的控制流被中断，控制权转移到特殊的异常处理程序。
+
+3. **信号（Signals）：** 在像 UNIX 这样的操作系统中，信号用于通知进程某个特定事件已发生。例如，`SIGKILL` 信号指示进程终止，`SIGALRM` 信号表示定时器已到期。
+
+4. **上下文切换（Context Switching）：** 在多任务操作系统中，调度程序可能会中断正在运行的进程的执行，将 CPU 切换到另一个进程。这种上下文切换是一种异常控制流，因为它改变了正常的执行流程。
+
+5. **系统调用（System Calls）：** 这些是用户程序中执行 I/O 操作、创建或终止进程或与其他进程通信的请求，由操作系统处理。系统调用中断当前进程，将控制权转移到操作系统，然后将控制权返回给进程。
+
+6. **非局部跳转（Non-Local Jumps）：** 在编程中，像 C 语言中的 `setjmp` 和 `longjmp` 这样的结构提供了一种从程序的一个点跳到另一个点的方式，绕过了正常的调用和返回规则。
+
+异常控制流对于计算机系统的高效和稳健运行至关重要，使它们能够处理异步事件，共享多个进程之间的资源，并从错误中恢复。
+====================================================================================================
