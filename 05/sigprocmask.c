@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
+#include <signal.h>
 
 void sigint_handler(int sig) {
     printf("Caught SIGINT\n");
