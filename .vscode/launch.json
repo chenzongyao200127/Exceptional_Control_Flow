@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/czy/new_space/Exceptional_Control_Flow/01",
-      "program": "/home/czy/new_space/Exceptional_Control_Flow/01/build/Debug/outDebug",
+      "cwd": "/home/czy/new_space/Exceptional_Control_Flow/04",
+      "program": "/home/czy/new_space/Exceptional_Control_Flow/04/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
