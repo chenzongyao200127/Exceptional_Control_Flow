@@ -39,39 +39,39 @@
 
 在 Linux 系统中，存在多种信号（Signals），每种信号都对应一个特定的事件，且具有默认的处理行为。以下是 Linux 支持的一些常见信号的列表，包括信号的编号（Number）、名称（Name）、默认行为（Default Action），以及对应事件（Corresponding Event）：
 ~~~shell
-| Number | Name        | Default Action        | Corresponding Event                          |
-|--------|-------------|-----------------------|----------------------------------------------|
-| 1      | SIGHUP      | Terminate             | 终端控制进程结束或控制终端关闭                 |
-| 2      | SIGINT      | Terminate             | 键盘中断（如 ctrl + c）                      |
-| 3      | SIGQUIT     | Core                  | 键盘退出信号                                |
-| 4      | SIGILL      | Core                  | 非法指令                                    |
-| 5      | SIGTRAP     | Core                  | 跟踪/断点捕获                               |
-| 6      | SIGABRT     | Core                  | Abort 信号由 abort(3) 发起                  |
-| 7      | SIGBUS      | Core                  | 总线错误（错误的内存访问）                    |
-| 8      | SIGFPE      | Core                  | 浮点异常                                    |
-| 9      | SIGKILL     | Terminate             | 强制终止                                    |
-| 10     | SIGUSR1     | Terminate             | 用户自定义信号1                             |
-| 11     | SIGSEGV     | Core                  | 无效的内存引用                              |
-| 12     | SIGUSR2     | Terminate             | 用户自定义信号2                             |
-| 13     | SIGPIPE     | Terminate             | 管道破裂: 写入无进程读取的管道                 |
-| 14     | SIGALRM     | Terminate             | 计时器信号（由 alarm(2) 发起）               |
-| 15     | SIGTERM     | Terminate             | 终止信号                                    |
-| 16     | SIGSTKFLT   | Terminate             | 栈故障（不常用）                            |
-| 17     | SIGCHLD     | Ignore                | 子进程结束信号                              |
-| 18     | SIGCONT     | Continue              | 继续执行暂停的进程                          |
-| 19     | SIGSTOP     | Stop                  | 停止进程的执行                              |
-| 20     | SIGTSTP     | Stop                  | 终端停止信号                                |
-| 21     | SIGTTIN     | Stop                  | 后台进程从终端读取数据时                    |
-| 22     | SIGTTOU     | Stop                  | 后台进程向终端写数据时                      |
-| 23     | SIGURG      | Ignore                | I/O紧急信号                                 |
-| 24     | SIGXCPU     | Core                  | 超出CPU时间限制（由 setrlimit(2) 设置）      |
-| 25     | SIGXFSZ     | Core                  | 超出文件大小限制（由 setrlimit(2) 设置）      |
-| 26     | SIGVTALRM   | Terminate             | 虚拟计时器到期（由 setitimer(2) 设置）       |
-| 27     | SIGPROF     | Terminate             | 性能分析计时器到期                          |
-| 28     | SIGWINCH    | Ignore                | 窗口大小变化                                |
-| 29     | SIGIO       | Terminate             | I/O相关的可用或紧急信号                     |
-| 30     | SIGPWR      | Terminate             | 电源故障（不常用）                          |
-| 31     | SIGSYS      | Core                  | 无效的系统调用                              |
+| Number | Name      | Default Action | Corresponding Event                      |
+| ------ | --------- | -------------- | ---------------------------------------- |
+| 1      | SIGHUP    | Terminate      | 终端控制进程结束或控制终端关闭           |
+| 2      | SIGINT    | Terminate      | 键盘中断（如 ctrl + c）                  |
+| 3      | SIGQUIT   | Core           | 键盘退出信号                             |
+| 4      | SIGILL    | Core           | 非法指令                                 |
+| 5      | SIGTRAP   | Core           | 跟踪/断点捕获                            |
+| 6      | SIGABRT   | Core           | Abort 信号由 abort(3) 发起               |
+| 7      | SIGBUS    | Core           | 总线错误（错误的内存访问）               |
+| 8      | SIGFPE    | Core           | 浮点异常                                 |
+| 9      | SIGKILL   | Terminate      | 强制终止                                 |
+| 10     | SIGUSR1   | Terminate      | 用户自定义信号1                          |
+| 11     | SIGSEGV   | Core           | 无效的内存引用                           |
+| 12     | SIGUSR2   | Terminate      | 用户自定义信号2                          |
+| 13     | SIGPIPE   | Terminate      | 管道破裂: 写入无进程读取的管道           |
+| 14     | SIGALRM   | Terminate      | 计时器信号（由 alarm(2) 发起）           |
+| 15     | SIGTERM   | Terminate      | 终止信号                                 |
+| 16     | SIGSTKFLT | Terminate      | 栈故障（不常用）                         |
+| 17     | SIGCHLD   | Ignore         | 子进程结束信号                           |
+| 18     | SIGCONT   | Continue       | 继续执行暂停的进程                       |
+| 19     | SIGSTOP   | Stop           | 停止进程的执行                           |
+| 20     | SIGTSTP   | Stop           | 终端停止信号                             |
+| 21     | SIGTTIN   | Stop           | 后台进程从终端读取数据时                 |
+| 22     | SIGTTOU   | Stop           | 后台进程向终端写数据时                   |
+| 23     | SIGURG    | Ignore         | I/O紧急信号                              |
+| 24     | SIGXCPU   | Core           | 超出CPU时间限制（由 setrlimit(2) 设置）  |
+| 25     | SIGXFSZ   | Core           | 超出文件大小限制（由 setrlimit(2) 设置） |
+| 26     | SIGVTALRM | Terminate      | 虚拟计时器到期（由 setitimer(2) 设置）   |
+| 27     | SIGPROF   | Terminate      | 性能分析计时器到期                       |
+| 28     | SIGWINCH  | Ignore         | 窗口大小变化                             |
+| 29     | SIGIO     | Terminate      | I/O相关的可用或紧急信号                  |
+| 30     | SIGPWR    | Terminate      | 电源故障（不常用）                       |
+| 31     | SIGSYS    | Core           | 无效的系统调用                           |
 ~~~
 
 这张表列出了 Linux 支持的一些常见信号及其属性。值得注意的是，不同的 Unix-like 系统可能在信号的具体实现上有所差异。
